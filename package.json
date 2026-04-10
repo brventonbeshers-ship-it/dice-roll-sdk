@@ -1,0 +1,50 @@
+{
+  "name": "dice-roll-sdk",
+  "version": "1.0.0",
+  "description": "TypeScript SDK for interacting with the Dice Roll smart contract on Stacks blockchain",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "stacks",
+    "blockchain",
+    "dice-roll",
+    "sdk",
+    "smart-contract",
+    "web3",
+    "dapp",
+    "stacks-blockchain",
+    "typescript",
+    "on-chain",
+    "dice-game"
+  ],
+  "author": "brventonbeshers-ship-it",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brventonbeshers-ship-it/dice-roll-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brventonbeshers-ship-it/dice-roll-sdk/issues"
+  },
+  "homepage": "https://github.com/brventonbeshers-ship-it/dice-roll-sdk#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@stacks/network": "^7.3.1",
+    "@stacks/transactions": "^7.3.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
