@@ -1,3 +1,5 @@
+![npm](https://img.shields.io/npm/v/dice-roll-sdk?color=blueviolet) ![Stacks Mainnet](https://img.shields.io/badge/Stacks-Mainnet-blueviolet) ![license](https://img.shields.io/badge/license-MIT-blue)
+
 # dice-roll-sdk
 
 TypeScript SDK for interacting with the Dice Roll contract on Stacks.
