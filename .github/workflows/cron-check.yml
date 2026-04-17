@@ -1,0 +1,37 @@
+name: Periodic Health Check
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '30 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    name: Verify dice-roll-sdk from npm
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Prepare clean environment
+        run: mkdir -p /tmp/dice-roll-sdk-check
+
+      - name: Initialize project
+        working-directory: /tmp/dice-roll-sdk-check
+        run: npm init -y
+
+      - name: Install dice-roll-sdk from registry
+        working-directory: /tmp/dice-roll-sdk-check
+        run: npm install dice-roll-sdk
+
+      - name: Verify module loads
+        working-directory: /tmp/dice-roll-sdk-check
+        run: node -e "const sdk = require('dice-roll-sdk'); console.log('dice-roll-sdk OK, exports:', Object.keys(sdk));"
+
+      - name: Show dependency tree
+        working-directory: /tmp/dice-roll-sdk-check
+        run: npm ls --all
